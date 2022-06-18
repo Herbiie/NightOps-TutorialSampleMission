@@ -1,0 +1,128 @@
+SCR_BaseGameMode NO_CoopSetup1 : "{AAD8DA66980A1D77}Prefabs/MP/NO_CoopSetup.et" {
+ components {
+  SCR_RespawnBriefingComponent "{597B2CEE9F5D61F8}" {
+   m_aGameModeHints {
+    SCR_UIInfo "{597D4ACAA84A8F75}" {
+     Name "The Old Empty Barn"
+     Description "Have I ever told you the story, of the old, empty barn? No? Well... There was nothing in it."
+    }
+    SCR_UIInfo "{597D4ACB34DE8633}" {
+     Name "The List"
+     Description "U-Boat Captain: Your name, will also go on the list! What is it? Mainwaring: Don't tell him pike!"
+    }
+    SCR_UIInfo "{597D4ACBC52503DB}" {
+     Name "Don't Panic!"
+     Description "Don't panic - they don't like it up 'em!"
+    }
+   }
+   m_aWinConditions {
+    SCR_BriefingVictoryCondition "{59A4B7D76E6B5D4A}" {
+     victoryCondition SEIZE
+     name "Name"
+     description "Secure Godfrey's Cottage"
+    }
+    SCR_BriefingVictoryCondition "{59A4FB83D47F9CCF}" {
+     victoryCondition GUARD
+     description "Defend Godfrey's Cottage from attack"
+    }
+    SCR_BriefingVictoryCondition "{59A4FB83CD87455E}" {
+     victoryCondition MOVE
+     description "Move to the extract point"
+    }
+   }
+  }
+  SCR_RespawnMenuHandlerComponent "{597B2EF80CE41F6C}" {
+   m_sFactionMenuMessage ""
+  }
+ }
+ coords 6883.747 38.5 4364.019
+ {
+  SCR_AIWorld {
+   ID "598B45657FF365AF"
+   components {
+    NavmeshWorldComponent "{5584F30E67F617AD}" {
+     NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+     }
+    }
+   }
+  }
+  SCR_LoadoutManager {
+   ID "598B45657FF3F701"
+   m_aPlayerLoadouts {
+    SCR_FactionPlayerLoadout "{596EB2A326D1EE2D}" {
+     m_sLoadoutName "Rifleman"
+    }
+    SCR_FactionPlayerLoadout "{59A2E21ECF7BFE59}" {
+     m_sLoadoutName "Grenadier"
+     m_sLoadoutResource "{BAFF84A16EC4B820}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_GL_BoGC.et"
+     m_sLoadoutImage "{99D02888988DED59}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_GL.edds"
+     m_sAffiliatedFaction "US"
+    }
+   }
+  }
+ }
+}
+NO_SCR_TaskManager : "{2DF590FC1A531940}Prefabs/NO_DTF/TaskManager.et" {
+ coords 6932.46 51.207 4394.059
+ {
+  NO_SCR_EditorTask : "{231FF93369E30084}Prefabs/NO_DTF/MultiTask.et" {
+   coords -2.346 9.347 93.205
+   m_sName "1. Secure Godfrey's Cottage"
+   m_sDescription "Godfrey's Cottage has been taken over by the USSR! Take it back!"
+   m_faction "US"
+   m_sCreateTaskNamesSuccess {
+    "task3"
+   }
+   m_bAssignFirstTask 1
+   {
+    $grp NO_SCR_EditorTask : "{501E003D39D4E993}Prefabs/NO_DTF/AreaFactionControlTask.et" {
+     {
+      coords -0.399 -5.826 0.24
+      m_sName "1A. Clear Godfrey's Cottage"
+      m_sDescription "Clear the USSR out of the cottage!"
+      m_sMapIconName "Icon_Task_Seize"
+      m_sTaskListIconName "Icon_Task_Seize"
+      m_faction "US"
+      m_sCreateTaskNamesSuccess {
+       "task2"
+      }
+      m_bAssignFirstTask 1
+      {
+       NO_SCR_FactionControlTrigger {
+        ID "5996F7F9EBC16B54"
+        coords 1.564 -5.767 0.737
+        SphereRadius 30
+        m_sOwnerFactionKey "US"
+       }
+      }
+     }
+     task2 {
+      coords -4.372 -0.971 -2.46
+      m_sName "1B. Defend The Cottage"
+      m_sDescription "Godfrey's friends are here! Kill them and defend the cottage!"
+      m_faction "US"
+      m_bAssignToFactionOnStart 0
+      {
+       NO_SCR_FactionControlTrigger {
+        ID "5996F7F9EBC16B54"
+        coords 3.872 1.363 2.735
+        SphereRadius 150
+        m_sOwnerFactionKey "US"
+       }
+      }
+     }
+    }
+   }
+  }
+  NO_SCR_EditorTask task3 : "{82EC0462F27F5221}Prefabs/NO_DTF/SingleTask.et" {
+   coords 41.515 40.489 284.161
+   m_sName "2. Extract"
+   m_sDescription "Move to the extract point!"
+   m_faction "US"
+  }
+ }
+}
+NO_SCR_SpawnManager : "{BC4EF3F0E9688AE2}Prefabs/NO_DSF/MP/Managers/SpawnManager.et" {
+ coords 6729.568 4.325 4194.979
+ m_factionToSpawnWhenDynamicFaction "USSR"
+}

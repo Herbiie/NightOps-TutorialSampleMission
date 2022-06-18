@@ -1,0 +1,169 @@
+NO_SCR_MissionTrigger : "{52FA44EBEB3115FC}Prefabs/MP/Triggers/NO_MissionTrigger.et" {
+ coords 6972.814 91.569 4680.289
+ SphereRadius 30
+ DrawShape 0
+ m_bEnableGameOver 1
+}
+$grp NO_SCR_SpawnTrigger : "{8E854CB7405795E8}Prefabs/NO_DSF/BaseSpawnTrigger.et" {
+ {
+  coords 6931.785 59.658 4489.008
+  SphereRadius 35
+  m_bDelete 0
+  m_faction "US"
+  m_bShouldTriggerOnlyOnPlayerContact 1
+  {
+   $grp GenericEntity : "{760612B75AA5BCFA}Prefabs/NO_DSF/Groups/SpawnAiGroupMove.et" {
+    {
+     components {
+      NO_SCR_AISpawnerComponent "{59889B97EB1965B4}" {
+       m_rSpawns {
+        CountSpawnsByOnlinePlayerWithManager "{59A3232E27B426B3}" {
+         prefab {
+          5
+         }
+        }
+        CountSpawnsByOnlinePlayerWithManager "{59A3232CF9D8075A}" {
+         CountOfPlayers 3
+         prefab {
+          1
+         }
+        }
+       }
+      }
+     }
+     coords 162.719 48.679 97.258
+     {
+      SCR_AIWaypoint {
+       ID "59889B900CE8FA54"
+       coords -150.92 -46.808 -113.608
+      }
+      SCR_AIWaypoint {
+       ID "59889B900CE8FA55"
+       coords -113.521 -38.565 -79.314
+      }
+     }
+    }
+    {
+     components {
+      NO_SCR_AISpawnerComponent "{59889B97EB1965B4}" {
+       m_rSpawns {
+        CountSpawnsByOnlinePlayerWithManager "{59A3232D905D8560}" {
+         prefab {
+          5
+         }
+        }
+        CountSpawnsByOnlinePlayerWithManager "{59A3232D8CBEA346}" {
+         CountOfPlayers 3
+         prefab {
+          1
+         }
+        }
+       }
+      }
+     }
+     coords -209.131 -31.875 139.847
+     {
+      SCR_AIWaypoint {
+       ID "59889B900CE8FA54"
+       coords 198.606 42.585 -141.753
+      }
+      SCR_AIWaypoint {
+       ID "59889B900CE8FA55"
+       coords 138.162 47.036 -106.073
+      }
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 6972.903 91.556 4682.508
+  SphereRadius 160
+  m_bDelete 0
+  m_bRandomizedSpawns 1
+  PercentageAi 50
+  m_faction "US"
+  m_bShouldTriggerOnlyOnPlayerContact 1
+  {
+   $grp GenericEntity : "{760612B75AA5BCFA}Prefabs/NO_DSF/Groups/SpawnAiGroupMove.et" {
+    {
+     components {
+      NO_SCR_AISpawnerComponent "{59889B97EB1965B4}" {
+       m_bRespawn 1
+       m_rSpawns {
+        CountSpawnsByOnlinePlayerWithManager "{59A3232D77AD05E5}" {
+         prefab {
+          5
+         }
+        }
+        CountSpawnsByOnlinePlayerWithManager "{59A3232D74F60802}" {
+         CountOfPlayers 3
+         prefab {
+          1
+         }
+        }
+       }
+      }
+     }
+     coords 93.424 3.103 -122.757
+     {
+      SCR_AIWaypoint {
+       ID "59889B900CE8FA54"
+       coords -107.036 -21.426 -8.584
+      }
+      SCR_AIWaypoint {
+       ID "59889B900CE8FA55"
+       coords -100.815 12.491 120.308
+      }
+     }
+    }
+    {
+     components {
+      NO_SCR_AISpawnerComponent "{59889B97EB1965B4}" {
+       m_bRespawn 1
+       m_rSpawns {
+        CountSpawnsByOnlinePlayerWithManager "{59A3233294506520}" {
+         prefab {
+          5
+         }
+        }
+        CountSpawnsByOnlinePlayerWithManager "{59A323328F4C5025}" {
+         CountOfPlayers 3
+         prefab {
+          1
+         }
+        }
+       }
+      }
+     }
+     coords -169.393 -51.062 -84.319
+     {
+      SCR_AIWaypoint {
+       ID "59889B900CE8FA54"
+       coords 140.839 28.321 -53.136
+      }
+      SCR_AIWaypoint {
+       ID "59889B900CE8FA55"
+       coords 154.671 43.246 86.354
+      }
+     }
+    }
+   }
+   GenericEntity : "{D8F00B5CFC8514F1}Prefabs/NO_DSF/Vehicles/SpawnVehicle.et" {
+    components {
+     NO_SCR_EnvSpawnerComponent "{59889B90E04F5D80}" {
+      m_rnDefaultPrefabs {
+       CountSpawnsByOnlinePlayer "{5988C249449C6C74}" {
+        prefab {
+         "{AF0578D66D51946B}Prefabs/Vehicles/Wheeled/M998/M998_covered_MERDC.et"
+        }
+       }
+      }
+     }
+    }
+    coords -9.83 -0.981 -0.168
+    angleY -164.262
+   }
+  }
+ }
+}

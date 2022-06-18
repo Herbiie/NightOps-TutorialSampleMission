@@ -1,0 +1,50 @@
+SCR_AIGroup : "{A2F75E45C66B1C0A}Prefabs/Groups/OPFOR/Group_USSR_MachineGunTeam.et" {
+ coords 6932.559 60.413 4490.458
+ angleY -146.471
+ m_aUnitPrefabSlots + {
+  "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+ }
+ m_aStaticWaypoints {
+  "CottageDefence"
+ }
+ {
+  SCR_DefendWaypoint CottageDefence : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+   coords -0.085 0.429 3.816
+   angleY 146.471
+  }
+ }
+}
+SCR_AIGroup : "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et" {
+ coords 6971.438 62.56 4447.675
+ m_aStaticWaypoints {
+  "patrol1" "patrol2" "patrol3" "patrol4" "patrol5" "patrol6" "cycle"
+ }
+ {
+  $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+   patrol1 {
+    coords -38.827 -10.269 -33.478
+   }
+   patrol2 {
+    coords -109.758 -20.33 -36.252
+   }
+   patrol3 {
+    coords -127.062 -20.596 -17.22
+   }
+   patrol4 {
+    coords -88.444 -5.641 81.109
+   }
+   patrol5 {
+    coords -32.952 3.696 67.205
+   }
+   patrol6 {
+    coords 3.091 1.211 19.654
+   }
+  }
+  AIWaypointCycle cycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+   coords 2.373 0.34 3.943
+   CycleWaypoints {
+    "patrol1" "patrol2" "patrol3" "patrol4" "patrol5" "patrol6"
+   }
+  }
+ }
+}

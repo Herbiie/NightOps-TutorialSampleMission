@@ -1,0 +1,8 @@
+GameProject {
+ ID "TheBattleOfGodfreysCottage"
+ GUID "59A0D8291827E148"
+ TITLE "TheBattleOfGodfreysCottage"
+ Dependencies {
+  "59872DC34F427384" "598B131A58C0F13F" "598ABCE21D6DE27D" "58D0FB3206B6F859"
+ }
+}
