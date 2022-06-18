@@ -1,3 +1,18 @@
 SCR_SpawnPoint : "{5A2220DD0C16958B}Prefabs/MP/Spawning/SpawnPoint_US.et" {
- coords 6752.7 5.848 4124.011
+ coords 6755.122 7.441 4108.385
+}
+GenericEntity : "{F7A42562EE8E24E6}Prefabs/NO_DSF/Structures/SpawnStructure.et" {
+ components {
+  NO_SCR_EnvSpawnerComponent "{59889B968C41636F}" {
+   m_rnDefaultPrefabs {
+    CountSpawnsByOnlinePlayer "{5988C2496351ED35}" {
+     prefab {
+      "{BE99D77D1155B127}Prefabs/Systems/Arsenal/ArsenalBoxes/US/ArsenalBox_US.et"
+     }
+    }
+   }
+   m_bSpawnImmediately 1
+  }
+ }
+ coords 6759.446 7.677 4106.036
 }
